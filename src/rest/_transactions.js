@@ -2,7 +2,9 @@ const Router = require('@koa/router');
 const transactionService = require('../service/transaction');
 
 const getAllTransactions = async (ctx) => {
-	ctx.body = await transactionService.getAll();
+	const limit =  ctx.query.limit && Number(ctx.query.limit);
+    const offset =  ctx.query.offset && Number(ctx.query.offset);
+	ctx.body = await transactionService.getAll(limit, offset);
 };
 
 const createTransaction = async (ctx) => {
@@ -11,6 +13,7 @@ const createTransaction = async (ctx) => {
 		date: new Date(ctx.request.body.date),
 	});
 	ctx.body = newTransaction;
+	ctx.status=201;
 };
 
 const getTransactionById = async (ctx) => {

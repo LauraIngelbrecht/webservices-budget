@@ -8,6 +8,7 @@ const getAllPlaces = async (ctx) => {
 const createPlace = async (ctx) => {
 	const newPlace = await placeService.create(ctx.request.body);
 	ctx.body = newPlace;
+	ctx.status = 201;
 };
 
 const getPlaceById = async (ctx) => {
