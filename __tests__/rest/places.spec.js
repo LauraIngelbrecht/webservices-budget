@@ -141,7 +141,7 @@ describe('Places', () => {
     });
 
     test('it should 200 and return the updated place', async () => {
-      const response = await request.put(`${url}/7f28c5f9-d711-4cd6-ac15-d13d71abff83`)
+      const response = await request.put(`${url}/${data.places[0].id}`)
         .send({
           name: 'Changed name',
           rating: 1,
@@ -149,7 +149,7 @@ describe('Places', () => {
 
       expect(response.status).toBe(200);
       expect(response.body).toEqual({
-        id: '7f28c5f9-d711-4cd6-ac15-d13d71abff83',
+        id: data.places[0].id,
         name: 'Changed name',
         rating: 1,
       });
