@@ -2,7 +2,11 @@
   "name": "webservices-budget",
   "version": "0.0.1",
   "jest": {
-    "testPathIgnorePatterns": ["src", "node_modules", "config"]
+    "testPathIgnorePatterns": [
+      "src",
+      "node_modules",
+      "config"
+    ]
   },
   "scripts": {
     "start": "npx env-cmd nodemon",
@@ -38,6 +42,6 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.15"
   }
 }
